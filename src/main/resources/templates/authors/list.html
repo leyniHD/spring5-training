@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Spring Framwork GURU</title>
+</head>
+<body>
+<h1>Book List</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+    </tr>
+    <tr th:each="author: ${authors}">
+        <td th:text="${author.id}"></td>
+        <td th:text="${author.firstName}" ></td>
+        <td>
+            <span th:each="book,iterStat : ${author.books}">
+           <span th:text="${book.title}"/>
+        <th:block><span th:text="${book.isbn}"/></th:block>
+            </span>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

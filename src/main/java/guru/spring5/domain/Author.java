@@ -11,17 +11,17 @@ public class Author {
     private Long id;
 
     private String firstName;
-    private String lastNane;
+    private String lastName;
+
     @ManyToMany(mappedBy = "authors")
     private Set<Book> books = new HashSet<>();
 
     public Author() {
     }
 
-    public Author(String firstName, String lastNane) {
+    public Author(String firstName, String lastName) {
         this.firstName = firstName;
-        this.lastNane = lastNane;
-
+        this.lastName = lastName;
     }
 
     public Long getId() {
@@ -40,12 +40,12 @@ public class Author {
         this.firstName = firstName;
     }
 
-    public String getLastNane() {
-        return lastNane;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastNane(String lastNane) {
-        this.lastNane = lastNane;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public Set<Book> getBooks() {
@@ -61,8 +61,7 @@ public class Author {
         return "Author{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
-                ", lastNane='" + lastNane + '\'' +
-                ", books=" + books +
+                ", lastName='" + lastName + '\'' +
                 '}';
     }
 
